@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage[british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{parskip}
+%\usepackage{natbib}
+\usepackage{pgfgantt}
+\usepackage{lscape}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[minted]{tcolorbox}
+\usepackage{hyperref}
+\usepackage[numbib,section]{tocbibind}
+\usepackage[a4paper,vscale=0.85]{geometry}
+\usepackage{doc}
+\usepackage[final]{pdfpages}
+
+\usepackage{enumitem}
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{writing.bib}
+\title{Project Terms of Reference -- The Analysis of web traffic, to aid the detection of attacks, for website owners}
+\author{Peter Smith \\
+\small Supervisor - Nick Dalton\\
+\small 2nd Marker - Neil Eliot
+}
+
+\includepdfset{pagecommand={}}
+\includepdfset{width=\textwidth}
+\begin{document}
+\maketitle
+
+\input{tor}
+\printbibliography
+\appendix
+\newpage
+\section{Ethics Form}
+
+\includepdf[pages=-]{ResearchEthics20289.pdf}
+
+%%Assuming of course you have saved the form  as \path{ethics.pdf}
+
+
+\section{Risk Assessment Form}
+N/A
+
+\includepdf[pages=-, angle=180]{torForm.pdf}
+
+\end{document}

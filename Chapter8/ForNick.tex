@@ -1,0 +1,10 @@
+\section{Evaluated Hypotheses}
+
+In order to make a complete analysis of the formula and software it would be good practise to review the three main hypotheses.  
+
+Firstly, it was hypothesised that the process of collecting log files will be an efficient way of collecting data in terms of space and computational resource. It is believed that this particular hypothesis was answered simply by building a system that uses only log file data. This data is automatically collected by websites and does not generate any additional computational activity. The data is relatively easy to store and takes up very little space. This hypothesis has been addressed to satisfy the criteria, as outlined in the requirements specification.
+
+The second hypothesis is the prediction that there is sufficient data within the log files to diagnose with a degree of certainty, potentially malicious IP traffic patterns by looking at the characteristics of each instance. This hypothesis was satisfied, as the evaluation of IP addresses that had been flagged by the formula as high risk, were concluded to be malicious by a human analyst in Chapter 7.  
+
+It was finally hypothesised that by by using a human moderator in combination with a formulaic detection system, that more malicious traffic will be correctly identified and less genuine traffic will be misidentified. During the evaluation of high risk scoring IP instances in Chapter 7, several falsely flagged entities were raised as malicious by the formula. The analyst was able to look into the log files and in each case apply logic to assess each instance on its own merits, then conclude that these high risk candidates were not malicious. This in turn supports the hypothesis, as without the human moderator, high risk candidates would otherwise remain assessed as malicious traffic instances and in turn generate errors.  
+

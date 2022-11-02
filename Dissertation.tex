@@ -1,0 +1,112 @@
+\documentclass[11pt,twoside]{book}
+\usepackage[a4paper,top=0.9in, bottom=2.54cm, vscale=1,inner=3.5cm,outer=2cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{subcaption}
+%\usepackage[doucument]{ragged2e}
+%\raggedright
+\usepackage[british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{parskip}
+%\usepackage{natbib}
+\usepackage{pgfgantt}
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[listingsutf8,minted]{tcolorbox}
+\usepackage{hyperref}
+\usepackage[chapter]{tocbibind}
+\usepackage{doc}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{float}
+\usepackage{lastpage}
+\usepackage{wrapfig}
+\usepackage{filecontents}
+\usepackage{amsmath}
+\usepackage{mleftright}
+\newcommand{\lnn}[1]{%
+  \ln\left(#1\right)%
+}
+
+\newcommand{\lnb}[1]{%
+  \ln\mleft(#1\mright)%
+}
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=3
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+
+\usepackage{enumitem}
+%\usepackage[]{biblatex}
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{writing.bib}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage \hspace{0cm} of \pageref{LastPage}}
+\fancyfoot[LO,CE]{Chapter \thechapter}
+\fancyfoot[CO,RE]{16018262}
+\usepackage{etoolbox}
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+\begin{document}
+
+\frontmatter
+\include{titlepage}
+\include{declaration}
+\include{acknowledgements}
+\include{abstract}
+\tableofcontents
+\listoffigures
+\mainmatter
+\chapter{Introduction}
+\input{Chapter1/Chapter1.tex}
+\chapter{Review of current detection methods for low bandwidth attacks}
+\input{Chapter2/Chapter2.tex}
+\chapter{Review of current detection methods for high bandwidth attacks}
+\input{Chapter3/Chapter3.tex} 
+\chapter{Human factors}\label{Human factors}
+\input{Chapter4/Chapter4.tex}
+\chapter{Tools, packages and Requirements Specifications}
+\input{Chapter5/Chapter4.tex} \label{Errorcodes}
+\chapter{Design and Implementation}
+\input{Chapter6/Chapter6.tex}
+\chapter{Testing}
+\input{Chapter7/Chapter6.tex}
+\chapter{Conclusions}
+\input{Chapter8/Chapter7.tex}
+\printbibliography
+\appendix
+\input{Apdenix/main.tex}
+\end{document}

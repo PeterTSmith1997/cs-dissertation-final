@@ -1,0 +1,107 @@
+%!TeX root=Dissertation.tex
+
+\section{Functional Requirements and Justification}
+\textbf{Must}
+\begin{enumerate}
+    \item Allow users to analyse their website access logs.
+    \begin{itemize}
+        \item Users need to be able to import a large data set of website access logs, maybe a few months at a time to look for trends.
+    \end{itemize}
+    \item Allow users to access and view the data from their access logs.
+    \begin{itemize}
+        \item Users need to be able to interact with the data within the data set allowing them to make informed decisions on the data.
+    \end{itemize}
+    \item Use some kind of learning loop.
+    \begin{itemize}
+        \item Users may submit small data sets to analyse and the software needs to be able to use historical data to calculate risk. This approach could be done with the use of statistical analysis or by the use of an AI through fuzzy logic or computer learning.
+    \end{itemize}
+    \item Allow a admin to update known IP address'.
+    \begin{itemize}
+        \item An admin user needs to be able to add or remove a benign IP address' for services like google and Bing bots.
+    \end{itemize}
+    \item Be able to read log files.
+    \begin{itemize}
+        \item This will enable the detection of incoming attacks.
+    \end{itemize}
+        \item Allow data to be stored on an appropriate database
+    \begin{itemize}
+        \item For example  No SQL (MongoDB), SQL (Microsoft access)
+    \end{itemize}
+        \item Allow data to be stored securely in a database.
+    \begin{itemize}
+        \item The data that is collected needs to be stored securely in a database for future use.
+    \end{itemize}
+    \item Detect attacks
+    \begin{itemize}
+        \item The software must be able to detect a wide variety of attacks that can occur on web servers
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Should}
+\begin{itemize}
+    \item Allow users to filter data on data and time.
+    \begin{itemize}
+        \item Users may know a time-frame for an attack, therefore they may need to be able to narrow data down to this window.
+    \end{itemize}
+\end{itemize}
+\textbf{Could}
+\begin{itemize}
+\item Be able to read log files that are in different formats.
+    \begin{itemize}
+        \item Consider the use of the following server types: Nginx, ISS.
+    \end{itemize}
+    \item Consider API integration.
+    \begin{itemize}
+        \item GOIPs, Abuse IPs.
+    \end{itemize}
+    \item Allow for concurrency in the database.
+    \begin{itemize}
+        \item If the software is developed further then there may be occasions when concurrency is needed within the database
+    \end{itemize}
+    
+    \end{itemize}
+\textbf{Won't}
+\begin{itemize}
+    \item Process the data on the server
+    \begin{itemize}
+        \item The only data that will be processed on the server will be the normal login or website traffic. The calculations of the formula will be processed on the PC of the person analyzing the data.
+    \end{itemize}
+    \item Automate the blocking of IP address' 
+    \begin{itemize}
+        \item Users need to maintain control of their own data, so if the program blocked IP addresses the users would not be in control. In addition to this there are a number or control panels (CPanel, plesk and custom panels) that would require custom APIs.
+    \end{itemize}
+\end{itemize}
+
+\section{Non-Functional Requirements and Justification}
+\textbf{Must}
+\begin{itemize}
+    \item Be maintainable, with well structured, commented, and documented code
+    \begin{itemize}
+        \item Following good practice and coding standards as well as making use of JavaDoc commenting will allow for code to be understood with greater ease, allowing for simpler maintenance and expansion of the project. 
+    \end{itemize}
+    \item Be able to analyse large amounts of data without draining large amounts of computational resources.
+    \begin{itemize}
+        \item The code shall be written to be as computationally simple as possible using the BigO notation.
+    \end{itemize}
+\end{itemize}
+\textbf{Should}
+\begin{itemize}
+    \item The user interface should be aesthetically pleasing. 
+    \begin{itemize}
+        \item The design of the application should be easy on the eye, therefore making it easier to use.
+    \end{itemize}
+\end{itemize}
+\textbf{Could}
+
+\begin{itemize}
+    \item Use Java for programming or find and alternative 
+    \begin{itemize}
+        \item Alternatives could include Python, C, PHP 
+    \end{itemize}
+    \item Consider making the upload facility flexible.
+    \begin{itemize}
+        \item There are different types of web-servers that can be used
+    \end{itemize}
+\end{itemize}
+\textbf{Won't}\\
+N/A

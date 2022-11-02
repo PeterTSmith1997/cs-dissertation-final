@@ -1,0 +1,30 @@
+\subsection{Different types of Port Scanning Attacks}
+
+After reading the literature regarding the various attacks, the types of port scanning attacks can be condensed down to the 5 following categories:
+\begin{itemize}
+    \item Ping Scan
+    \begin{itemize}
+        \item The method of ping scanning entails sweeping an entire network block or a single target, to asses if the target is live. It sends an ICMP echo request to the target, and if the response is an ICMP reply, then you know the target is alive. It is becoming increasingly common that ICMP pings are being blocked by firewalls and routers, that this attack method is becoming ever more ineffective.
+    \end{itemize}
+    \item TCP Half-Open
+    \begin{itemize}
+        \item This is probably the most common type of port scan. This is a relatively quick scan that can potentially scan thousands of ports per second. It works this way because it does not complete the TCP handshake process that was discussed in section \ref{attack1} of this chapter. It simply sends a packet with the SYN flag set and waits for the SYN-ACK from the target and does not complete the connection. After identifying open ports the attacker may then escalate this probe with a further attack, for example a brute force attack against an open port.
+    \end{itemize} 
+    \item TCP Connect
+    \begin{itemize}
+        \item This port scanning technique is essentially the same as the TCP Half-Open scan, however, instead of leaving the target hanging, the port scanner completes the TCP connection. It must be noted that this method of scanning created a lot of noise that can easily be detected as malicious activity, hence this particular scan is less stealthy and less popular than other methods.
+    \end{itemize}
+    \item UDP
+    \begin{itemize}
+        \item Essentially similar to the Ping scan the UDP scans are most common to detect DNS, SNMP and DHCP services. UDP scans work by sending a packet, which is usually empty. If the target responds with an ICMP unreachable error, the attacker can assume that that port is closed. If it responds with an ICMP unreachable error packet with other codes, the packet is considered filtered. If no response is received at all, the port is considered open or filtered. This is a particularly unreliable and sluggish method of scanning as they may be waiting for a packet that may never come. An attacker may have to send numerous packets then wait to make sure a port is considered open or filtered. The problem with using any communication with UDP is that it is unreliable – it has no way of creating an established connection or synchronizing the packets like TCP does. For this reason, UDP scans are typically slow and unreliable. The attacker needs to wait for a packet that may never come, and has no real way of telling if the packet even got to the destination in the first place. An attacker may have to send numerous packets then wait to make sure a port is considered open or filtered.
+    \end{itemize}
+    \item Stealth Scanning
+    \begin{itemize}
+        \item These scan types are known as stealth scanning because the packets are engineered in such a way that the attacker is  to induce some type of response from the target without actually going through the handshaking process and establishing a connection. In general these types of scans are elusive to detection methods because they are unlikely to appear in logs and are some of the most minimal port scanning techniques available. The weakness of this method is that because of the way that Microsoft implements the TCP/IP stack, all ports will be considered closed, hence making the number of vulnerable target devices much smaller. If the attacker does receive an open port, they will automatically know that the target is using an alternate operating system to Microsoft Windows.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+

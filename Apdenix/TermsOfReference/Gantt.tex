@@ -1,0 +1,51 @@
+%!TeX root=TermsOfReference.tex
+
+% A lot of the settings here are tuned to fit a landscape gantt chart into
+% an A4 piece of paper.
+\begin{ganttchart}[
+time slot format=little-endian,
+calendar week text=\currentweek,
+x unit=2.4pt,
+y unit chart=14pt,
+y unit title=12pt,
+title label font=\scriptsize,
+bar top shift=.15,
+bar height=0.7,
+milestone label font = \small,
+group label font = {\tiny\bfseries},
+group inline label node/.append style=centered,
+hgrid=true,vgrid={*6{draw=none},dotted},
+region/.style={inline,group peaks width=2,
+  group peaks height=0.25, group height=0.5,
+  group top shift=0.2 ,group/.append style={fill=#1}},
+milestone left shift=0,
+milestone right shift=1,
+ms/.style={inline,
+    milestone inline label node/.append style={#1=0pt}}
+]{11/9/19}{18/05/20} %<- Dates Gantt Chart runs from and to
+
+\gantttitlecalendar{year,month,week=1}\\
+% Highlight Smesters and Vactions
+\ganttgroup[region=blue!10]{Sem 1}{23/9/19}{20/12/19}
+\ganttgroup[region=red!50]{Christmas}{20/12/17}{1/1/18}
+\ganttgroup[region=blue!50]{Sem 2}{15/1/20}{23/3/20}
+\ganttgroup[region=green!25]{Easter}{26/3/20}{13/4/20}
+\ganttgroup[region=blue!50]{Sem 2}{16/04/20}{27/04/20}\\
+
+% Project Deadlines (from the slides)
+\ganttmilestone[]{TOR}{28/10/19}
+\ganttmilestone[ms=left]{\bfseries TOR}{28/10/19}
+\ganttmilestone[ms=right]{Draft Analysis}{6/12/19}
+\ganttmilestone[ms=left]{Submit}{30/4/20}
+\ganttnewline[thick]
+
+% --Tasks go here
+% put in a title, a start date, end date...
+\ganttbar{TOR}{23/9/19}{21/10/19}
+\ganttbar[inline]{\emph{revise}}{25/10/19}{10/11/19}\\
+\ganttbar{Analysis}{18/9/19}{24/11/19}\\
+\ganttbar{Design}{31/10/19}{17/1/20}\\
+\ganttbar{Build}{17/1/20}{17/2/20}\\
+\ganttbar{Test}{20/2/20}{16/3/20}\\
+\ganttmilestone[ms=right]{Build complete}{18/2/20}
+\end{ganttchart}
